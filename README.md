@@ -21,5 +21,5 @@ Welcome to the **Telegram Auto-Reply Bot!** This bot is designed to automaticall
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/suryaprabhas1244/telegram-auto-reply-bot.git
+   git clone https://github.com/suryaprabhas1245/telegram-auto-reply-bot.git
    cd telegram-auto-reply-bot
