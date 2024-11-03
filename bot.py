@@ -9,7 +9,7 @@ def auto_reply(update: Update, context: CallbackContext) -> None:
 # Main function to set up the bot
 def main():
     # Set up the Updater with your bot token
-    updater = Updater("YOUR_BOT_TOKEN")
+    updater = Updater("8177260502:AAGbD5iUoWLJtTJ0givGe9QE89dLIuUqxRc")
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
