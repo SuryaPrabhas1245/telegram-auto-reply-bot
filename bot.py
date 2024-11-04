@@ -1,10 +1,19 @@
+import logging
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 
+# Configure logging
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+)
+
 # Function to handle incoming messages
 def auto_reply(update: Update, context: CallbackContext) -> None:
-    # Reply with a custom message
-    update.message.reply_text("Hey there! I'm currently offline, but I'll get back to you soon.")
+    try:
+        # Reply with a custom message
+        update.message.reply_text("Hey there! I'm currently offline, but I'll get back to you soon.")
+    except Exception as e:
+        logging.error(f"Error processing message: {e}")
 
 # Main function to set up the bot
 def main():
@@ -23,3 +32,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
