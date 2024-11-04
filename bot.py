@@ -1,3 +1,4 @@
+from queue import Queue
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
 
@@ -8,8 +9,11 @@ def auto_reply(update: Update, context: CallbackContext) -> None:
 
 # Main function to set up the bot
 def main():
-    # Set up the Updater with your bot token
-    updater = Updater("TELEGRAM_BOT_TOKEN")
+    # Create an update queue
+    update_queue = Queue()
+
+    # Set up the Updater with the environment variable TELEGRAM_BOT_TOKEN
+    updater = Updater(os.environ['TELEGRAM_BOT_TOKEN'], update_queue=update_queue)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
